@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Profile</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --radius: 18px;
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(247,247,245,0.88);
+      border-bottom: 1px solid rgba(229,231,235,0.9);
+    }
+
+    .topbar-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.96rem;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 28px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 90px;
+      align-self: start;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      border: 1px solid #bfdbfe;
+      display: grid;
+      place-items: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      line-height: 1.15;
+      margin: 0 0 8px;
+    }
+
+    .title, .affiliation {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .affiliation { margin-top: 4px; }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    section {
+      padding: 28px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .item {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .item-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .item-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 0.82rem;
+      color: #374151;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 5px 10px;
+    }
+
+    footer {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+      }
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Your Name</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <aside class="sidebar">
+      <div class="card profile-card">
+        <div class="avatar">YN</div>
+        <h1>Your Name</h1>
+        <p class="title">Assistant Professor / PhD Student / Researcher</p>
+        <p class="affiliation">Department Name, University Name</p>
+
+        <div class="socials">
+          <a class="pill" href="#">CV</a>
+          <a class="pill" href="#">Google Scholar</a>
+          <a class="pill" href="#">GitHub</a>
+          <a class="pill" href="#">Email</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="content">
+      <section id="about" class="card">
+        <h2>About</h2>
+        <p>
+          Welcome to my homepage. I am a researcher working on machine learning, computational neuroscience,
+          and human-centered AI. My work focuses on building models that are both useful and interpretable.
+        </p>
+        <p>
+          You can replace this text with your own short biography, current position, academic background,
+          and research interests.
+        </p>
+      </section>
+
+      <section id="research" class="card">
+        <h2>Research</h2>
+        <div class="item-list">
+          <div class="item">
+            <div class="item-title">Research Area One</div>
+            <div class="item-meta">A short subtitle or lab/project context</div>
+            <p>
+              Briefly describe a major research direction here. Keep it readable and concise.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Representation Learning</span>
+              <span class="badge">Interpretability</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-title">Research Area Two</div>
+            <div class="item-meta">Another project or theme</div>
+            <p>
+              Add another line or two about your methods, applications, or collaborations.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Neuroscience</span>
+              <span class="badge">Vision</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="card">
+        <h2>Selected Publications</h2>
+        <div class="item-list">
+          <div class="item">
+            <div class="item-title">Paper Title Goes Here</div>
+            <div class="item-meta">Your Name, Coauthor One, Coauthor Two · Conference/Journal, 2026</div>
+            <p class="muted">
+              <a href="#">paper</a> · <a href="#">code</a> · <a href="#">project page</a>
+            </p>
+          </div>
+          <div class="item">
+            <div class="item-title">Another Publication Title</div>
+            <div class="item-meta">Your Name, Coauthor One · Conference/Journal, 2025</div>
+            <p class="muted">
+              <a href="#">paper</a> · <a href="#">slides</a>
+            </p>
+          </div>
+          <div class="item">
+            <div class="item-title">Third Publication Title</div>
+            <div class="item-meta">Your Name, Coauthor Group · Preprint, 2024</div>
+            <p class="muted">
+              <a href="#">preprint</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="teaching" class="card">
+        <h2>Teaching</h2>
+        <div class="item-list">
+          <div class="item">
+            <div class="item-title">Course Title</div>
+            <div class="item-meta">University Name · Spring 2026</div>
+            <p>Short description of the course, topics, or your role.</p>
+          </div>
+          <div class="item">
+            <div class="item-title">Another Course</div>
+            <div class="item-meta">University Name · Fall 2025</div>
+            <p>Short description of course content or teaching responsibilities.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>Office: Building Name, Room 123</p>
+        <p>Location: Princeton, NJ</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Your Name. Built as a single-file academic homepage template.
+  </footer>
+</body>
+</html>
