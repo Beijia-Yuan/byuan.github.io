@@ -1,4 +1,4 @@
-# Dr. [Full Name]
+# Bethany (Beijia) Yuan
 
 [Short title or role]  
 [Department or Lab], [University or Institution]
@@ -62,8 +62,8 @@ I have contributed to teaching and mentoring in:
 
 ## Contact
 
-Email: [your email]  
+Email: by7175@princeton.edu
 GitHub: [GitHub username]  
 Google Scholar: [link]  
-ORCID: [link]  
+ORCID: https://orcid.org/0009-0009-7269-085X[https://orcid.org/0009-0009-7269-085X]  
 CV: [link]
