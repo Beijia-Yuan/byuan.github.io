@@ -62,7 +62,7 @@ I have contributed to teaching and mentoring in:
 
 ## Contact
 
-Email: [by7175@princeton.edu]
+Email:(by7175@princeton.edu)
 GitHub: [GitHub username]  
 Google Scholar: [link]  
 ORCID: [https://orcid.org/0009-0009-7269-085X]
