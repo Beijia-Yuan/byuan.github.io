@@ -32,7 +32,7 @@
 .research-circle img {
   width: 90%;
   height: 90%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
