@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Area One</title>
+  <title>How do loops affect chromatin site-site contact</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <h1>Research Area One</h1>
   <p>Spatial and temporal regulation of chromatin organization is essential for cellular functions. Many biological processes requires chromatin sites far away along the contour to come to close proximity physically, such as enhancer-promoter interactions for gene expression regulation or VDJ recombination in immune cells. How do cells achieve this? Do these processes require complex biological mechanisms, or do simple physics laws suffice to explain the phenomenon? </p>
-  <p>The idea of approaching a fundamental problem with the simpliest model really attracted me. And after analyzing transcriptome data in the previous years, I got curious about the regulations of gene expressions beyond purely data-driven and correlation-based methods. During my undergrad at UCSD, I started to work with Dr. Olga Dudko on formulating chromatin dynamics as a self-avoiding Random Walk. It was initially my senior design project, where I collaborated with Kiana Golden (also a student at Princeton now). But I really liked the project so I stayed one year after graduation to further pursue this.</p>
+  <p>The idea of approaching a fundamental problem with the simpliest model really attracted me. And after analyzing transcriptome data in the previous years, I got curious about the regulations of gene expressions beyond purely data-driven and correlation-based methods. During my undergrad at UCSD, I started to work with Dr. Olga Dudko on formulating chromatin conformation as a self-avoiding Random Walk. It was initially my senior design project, where I collaborated with Kiana Golden (also a student at Princeton now). But I really liked the project so I stayed one year after graduation to further pursue this.</p>
+  <p>If chromatin site i and site j are separated by a genomic distance of l, we can think this length of l chromatin as a Random Walk with l/b steps, where b is the Kuhn length of the chromatin. The physical distance between i and j is the end-to-end distance of the Random Walk, so it should follow a Gaussian distribution. The probability of site i and site j interacting is proportional to the probability of physical contact, i.e. physical distance \lt a threshold.  Now imagine a chromatin loop forms within this segment. It reduces the effective genomic distance between the two sites, and the probability of physical contact increases.</p>
+  <p>The ideal Random Walk tells that chromatin loops always facilitate site-site interactions. However, it has been shown in literature that loops can also insulate interactions, possibly through steric hindrance. To account for the excluded volume effect of chromatin, we turned to self-avoiding Random Walk</p>
 
   <a href="../index.html">Back to home</a>
 </body>
